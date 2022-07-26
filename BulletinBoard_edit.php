@@ -46,8 +46,6 @@
                     
                 }else{
                     $edit_num = $_POST['edit_num'];
-
-                    //SQL文中で変数を展開するには…　Lineのノートに投稿してあります
                     $sql = $pdo -> prepare("INSERT INTO tb5_1 (name, comment, pass, date) VALUES (:name, :comment, :pass, :date)");
                     $sql = "UPDATE tb5_1 SET name = :name, comment = :comment, pass = :pass, date = :date WHERE id= '" . $edit_num . "' ";
                     $stmt = $pdo -> prepare($sql);
